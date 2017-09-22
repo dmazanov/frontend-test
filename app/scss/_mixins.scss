@@ -1,0 +1,73 @@
+/* --------- mixins --------- */
+
+@mixin inlineblock {
+	display: inline-block;
+	vertical-align: top;
+}
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
+
+@mixin placecolor($color: #000000) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+
+/* --------- @ media screen --------- */
+@mixin phone {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media (min-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin retina {
+	@media (min-resolution: 144dpi),
+				 (min-resolution: 1.5dppx) {
+						@content;
+					}
+}

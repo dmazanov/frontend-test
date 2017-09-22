@@ -1,0 +1,58 @@
+.page-header {
+	position: relative;
+	display: flex;
+	min-height: 80px;
+	align-items: center;
+
+}
+
+.menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	display: none;
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	font-family: $ff-light;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px 1px rgba(0,0,0, 0.2);
+
+	@include tablet {
+		position: static;
+		display: flex;
+		justify-content: center;
+		box-shadow: none;
+		padding: 0;
+	}
+}
+
+.menu-item {
+
+	@include tablet {
+		padding: 0;
+		margin: {
+			left: 31px;
+			right: 34px;
+		}
+	}
+}
+
+.menu-item a {
+	display: block;
+	padding: 10px 15px;
+	font-size: 1.4rem;
+	font-family: inherit;
+	color: #435993;
+
+	@include tablet {
+		padding: 0 5px;
+	}
+
+	&:hover,
+	&:focus {
+		color: #000000;
+	}
+}
