@@ -1,0 +1,8 @@
+{
+  "name": "frontend-test",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery.scrollbar": "^0.2.11",
+    "select2": "^4.0.4"
+  }
+}
