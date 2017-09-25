@@ -55,16 +55,11 @@ gulp.task('clean', function() {
 	return del('dist');
 });
 
-//Copie files
-gulp.task('copy', function() {
-	return gulp.src([
-		'fonts/**/*.{woff,woff2}',
-		'*.html',
-		'js/vendor.min.js'
-		], {
-			base: './app'
-		})
-		.pipe(gulp.dest('dist'));
+//Copie Fonts 
+gulp.task('fonts', function() {
+    gulp.src('./app/fonts/**/*.{woff,woff2}')
+    // Perform minification tasks, etc here
+    .pipe(gulp.dest('./dist/fonts'));
 });
 
 //Minify CSS
@@ -85,11 +80,16 @@ gulp.task('javascript', function() {
 
 // Libs JS
 gulp.task('libJS', function() {
-	return gulp.src('./app/js/lib/**/*.js')
+	return gulp.src([
+		//'./app/js/lib/**/*.js',
+		'./app/bower/jquery/dist/jquery.min.js',
+		'./app/bower/jquery.scrollbar/jquery.scrollbar.js',
+		'./app//bower/select2/dist/js/select2.min.js'
+		])
 	.pipe(concat('vendor.js'))
 	.pipe(uglify())
 	.pipe(rename('vendor.min.js'))
-	.pipe(gulp.dest('./dist/js'))
+	.pipe(gulp.dest('dist/js'))
 });
 
 //Images
@@ -116,4 +116,4 @@ gulp.task('path', function() {
 		.pipe(gulp.dest('dist'))
 })
 
-gulp.task('build',['clean', 'copy', 'mincss', 'javascript', 'libJS', 'images', 'path'], function() {});
+gulp.task('build',['clean', 'fonts', 'mincss', 'javascript', 'libJS', 'images', 'path'], function() {});
