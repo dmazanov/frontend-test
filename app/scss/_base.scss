@@ -29,12 +29,6 @@ ol, ul{
 
 a {
 	text-decoration: none;
-	&:focus,
-	&:hover {
-		//text-decoration: underline;
-	}
-
-	&:active {}
 }
 
 img {
@@ -48,7 +42,7 @@ img {
 	margin: 0 auto;
 	padding: 0 15px;
 	@include tablet {
-		width: 100%;
+		//width: 100%;
 	}
 }
 
@@ -67,7 +61,19 @@ img {
 	text-align: center;
 	background-image: url('../img/body-bg.png');
 	background-repeat: no-repeat;
-	background-size: 100%; //contain;
+	background-size: auto;
+	background-position-x: 50%;
+	border-top: 1px solid #d9d9d9;
+
+	@include laptop {
+		background-size: 100%;
+	}
+	@include desktop {
+		background-position-y: -14px;
+	}
+	@include desktop-lg {
+	background-position-y: -70px;
+	}
 }
 
 .page-title {

@@ -1,0 +1,172 @@
+.range-labels {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	li {
+		position: relative;
+		max-width: 180px;
+		width: 100%;
+		margin-right: 10px;
+		font-size: 1.1rem;
+		font-family: $ff-light;
+		line-height: 1.46;
+		color: #2e211c;
+		text-align: left;
+		@include tablet {
+			font-size: 1.3rem;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -36px;
+			left: 0;
+			width: 1px;
+			height: 30px;
+			background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 12px, #b4b4b4 12px, #b4b4b4 13px, #fff 13px, #fff 100%);
+			@include tablet {
+				background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 12px, #b4b4b4 12px, #b4b4b4 13px, #fff 13px, #fff 15px, #b4b4b4 15px, #b4b4b4 16px, #fff 16px, #fff 19px, #b4b4b4 19px, #b4b4b4 20px, #fff 20px, #fff 22px, #b4b4b4 22px, #b4b4b4 23px, #fff 23px, #fff 100%);
+			}
+		}
+
+		&:nth-child(2) {
+			&:after {
+				background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 12px, #b4b4b4 12px, #b4b4b4 13px, #fff 13px, #fff 100%);
+				@include tablet {
+					background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 12px, #b4b4b4 12px, #b4b4b4 13px, #fff 13px, #fff 15px, #b4b4b4 15px, #b4b4b4 16px, #fff 16px, #fff 19px, #b4b4b4 19px, #b4b4b4 20px, #fff 20px, #fff 100%);
+				}
+			}
+		}
+
+		&:nth-child(3) {
+			&:after {
+				background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 12px, #b4b4b4 12px, #b4b4b4 13px, #fff 13px, #fff 15px, #b4b4b4 15px, #b4b4b4 16px, #fff 16px, #fff 100%);
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
+			text-align: right;
+
+			&:after {
+				left: auto;
+				right: -1px;
+				background-image: linear-gradient(to bottom, #b4b4b4 0, #b4b4b4 1px, #fff 1px, #fff 3px, #b4b4b4 3px, #b4b4b4 4px, #fff 4px, #fff 6px, #b4b4b4 6px, #b4b4b4 7px, #fff 7px, #fff 9px, #b4b4b4 9px, #b4b4b4 10px, #fff 10px, #fff 100%);
+			}
+		}
+	}
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    outline: currentColor;
+    /* fix for FF unable to apply focus style bug  */
+    border: 1px solid white; 
+}
+
+#scalar-controls {
+  width: 100%;
+  margin: -10px auto 2.4rem;
+
+  label, input { 
+	  font-size: 1.3rem;
+	  display: block; 
+	  width: 100%; //25%
+	}
+}
+#scalar-controls svg {
+  margin-top: 2rem;
+}
+
+#scale {
+  margin-top: 5px;
+}
+
+
+// IE 10+ EDGE
+html[data-useragent*='MSIE 10.0'] #scalar-controls label { display: none; }
+
+_:-ms-lang(x), #scalar-controls label { display: none; }
+
+
+
+// WEBKIT BASED BROWSERS (CHROME, SAFARI, OPERA)
+input[type=range]::-webkit-slider-runnable-track {
+    //height: 0px;
+    background: white;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 26px;
+    width: 23px;
+    background-image: url('../img/icon/range-thumb-icon.svg');
+    margin-top: -4px;
+    cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: currentColor;
+}
+
+
+// FIREFOX
+input[type=range]::-moz-range-track {;
+    height: 1px;
+    background: transparent;
+    border: none;
+    border-radius: none;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 26px;
+    width: 23px;
+    background-image: url('../img/icon/range-thumb-icon.svg');
+    cursor: pointer;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+
+// INTERNET EXPLORER 10 +
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 18px;
+    width: 18px;
+    background: #435993;
+    border-radius: 50%;
+    cursor: pointer;
+}

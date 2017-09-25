@@ -1,12 +1,28 @@
+.form {
+	width: auto;
+
+	@include tablet {
+		width: 100%;
+	}
+}
+
+.form__inner {
+	max-width: 520px;
+	margin: 0 auto;
+}
+
 fieldset { 
 	padding: 0;
 	margin: 0;
+	margin-bottom: 48px;
 	border: none;
+	outline: currentColor;
 }
 
 
 legend {
 	display: block;
+	width: 100%;
 	padding: 0;
 	border: none;
 }
@@ -14,7 +30,12 @@ legend {
 
 .form__heading {
 	margin-top: 22px;
-	
+	margin-bottom: 50px;
+	text-align: center;
+
+	&--narrow {
+		margin-bottom: 0px;
+	}
 
 	&-text {
 		display: block;
@@ -24,7 +45,25 @@ legend {
 	}
 }
 
+
+
 .form__icon {
 	display: block;
 	margin-bottom: 20px;
+}
+
+.form__explanation {
+	margin-bottom: 36px;
+	font-size: 1.6rem;
+	font-family: $ff-light;
+	line-height: 1.5;
+	color: #1c1c1c;
+}
+
+.button-group {
+	margin-bottom: 20px;
+}
+
+.form__btn {
+	margin-top: 42px;
 }

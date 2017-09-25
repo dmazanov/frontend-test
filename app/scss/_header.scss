@@ -1,9 +1,29 @@
+.offset {
+  margin-top: 0;
+  padding-top: 79px;
+  text-align: center;
+  transition: .3s;
+}
+
 .page-header {
-	position: relative;
 	display: flex;
-	min-height: 80px;
+	height: 79px;
 	align-items: center;
 
+	position: fixed;
+	z-index: 10;
+	background-color: #fff;
+	width: 100%;
+	transition: .3s;
+	&.small {
+		height: 40px;
+		border: none;
+		box-shadow: 0 0 5px rgba(black, .2);
+		// when header.small also change page offset
+    & ~ .offset {
+      padding-top: 30px;
+    }
+	}
 }
 
 .menu {

@@ -1,0 +1,27 @@
+.form-group {
+	margin-bottom: 25px;
+}
+
+.form-control {
+	width: 100%;
+	height: 60px;
+	padding: 0 15px;
+	font-size: 2.4rem;
+	font-family: $ff-base;
+	text-align: center;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	box-sizing: border-box;
+
+	@include placecolor($form-control-color);
+}
+
+.textarea-field {
+	height: 180px;
+	padding: 20px;
+	font-size: 2rem;
+	font-family: $ff-base;
+	text-align: left;
+	resize: vertical;
+}
+

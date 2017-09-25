@@ -1,0 +1,35 @@
+.btn {
+	display: inline-block;
+	height: 50px;
+	padding: 0 32px;
+
+	font-size: 1.6rem;
+	font-family: $ff-light;
+	line-height: 1;
+	color: #ffffff;
+
+	vertical-align: middle;
+	text-align: center;
+
+	user-select: none;
+	white-space: normal;
+	word-wrap: normal;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	outline: currentColor;
+
+	border-radius: 10px;
+	background-color:  #435993;
+	transition: all .15s ease-in-out;
+
+	&:hover {
+		background-color: darken(#435993, 15%);
+	}
+	&:active {
+
+	}
+	&:focus {
+	box-shadow: 0 0 0 3px rgba(#435993, 0.4);
+	}
+}
