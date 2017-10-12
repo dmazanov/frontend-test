@@ -3,7 +3,7 @@
 }
 
 .form-control {
-position: relative;
+	position: relative;
 	width: 100%;
 	height: 60px;
 	padding: 18px 15px 0;
@@ -16,7 +16,8 @@ position: relative;
 	
 	@include placecolor($form-control-color, 2.4rem);
 	&:focus {
-		outline: 1px solid #435993;
+		outline: currentColor;
+		border: 1px solid #435993;
 	}
 }
 
