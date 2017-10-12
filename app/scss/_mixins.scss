@@ -18,17 +18,21 @@
 }
 
 
-@mixin placecolor($color: #000000) {
+@mixin placecolor($color: #000000, $fz: 1.6rem) {
     &::-webkit-input-placeholder {
+        font-size: $fz;
         color: $color;
     }
     &:-moz-placeholder {
+        font-size: $fz;
         color: $color;
     }
     &::-moz-placeholder {
+        font-size: $fz;
         color: $color;
     }
     &:-ms-input-placeholder {
+        font-size: $fz;
         color: $color;
     }
 }
